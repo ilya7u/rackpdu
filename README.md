@@ -20,11 +20,55 @@ $ yarn add rackpdu
 ```ts
 import { RackPDU } from 'rackpdu';
 
-const client = new RackPDU('127.0.0.1:161');
+const client = new RackPDU('192.168.1.102:161'); // or new RackPDU('192.168.1.102', { timeout: 30000});
 console.log(await client.isAlive());
 
 await client.close();
 ```
+
+```ts
+import { RackPDU } from 'rackpdu';
+
+console.log(await RackPDU.isAlive('192.168.1.102'));
+```
+
+## Methods
+
+Common:
+
+- isAlive
+- getName
+- getHardwareRevision
+- getFirmwareRevision
+- getDayOfManufacture
+- getModelNumber
+- getSerialNumber
+- getDescription
+- getUptime
+- getPowerDraw
+
+Outlets:
+
+- getOutletsCount
+- getOutletName
+- getOutletNames
+- getOutletState
+- getOutletStates
+
+Commands:
+
+- runDeviceCommand
+- runOutletsCommand
+
+## Static methods
+
+- RackPDU.isAlive
+- RackPDU.getOutletsNames
+- RackPDU.outletRunCommand
+- RackPDU.outletOn
+- RackPDU.outletOff
+- RackPDU.outletReboot
+- RackPDU.outletsReboot
 
 ## Configure Rack PDU Hardware
 
