@@ -1,0 +1,46 @@
+{
+    "name": "rackpdu",
+    "version": "1.0.2",
+    "main": "out/index.js",
+    "types": "out/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ilya7u/rackpdu.git"
+    },
+    "scripts": {
+        "build": "rimraf out & tsc",
+        "lint": "eslint src --ext .ts",
+        "lint:fix": "npm run lint -- --fix",
+        "prettier": "prettier package.json src/**/*.ts --check",
+        "prettier:fix": "npm run prettier -- --write",
+        "upgrade": "npx npm-check-updates -u && npm i",
+        "backup": "npm publish && autogit",
+        "prepublishOnly": "npm run build && npm version patch --force"
+    },
+    "dependencies": {
+        "lodash": "^4.17.21",
+        "net-snmp": "^3.9.6",
+        "pino": "^8.14.1",
+        "pino-pretty": "^10.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.15.10",
+        "@typescript-eslint/eslint-plugin": "^5.57.0",
+        "@typescript-eslint/parser": "^5.57.0",
+        "eslint": "^8.36.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.8.7",
+        "prettier-eslint": "^15.0.1",
+        "rimraf": "^4.1.3",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^4.9.5"
+    },
+    "author": "Ilia Skripchenko <ilya7u@gmail.com> (https://ilya7u.com/)",
+    "files": [
+        "out"
+    ],
+    "publishConfig": {
+        "access": "public"
+    }
+}
