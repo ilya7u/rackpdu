@@ -2,22 +2,22 @@ import snmp from 'net-snmp';
 import _ from 'lodash';
 
 // # OIDs for the PDUs
-//     # PowerNet-MIB::sPDUIdentModelNumber.0
-//     my $pdu_model_oid = '.1.3.6.1.4.1.318.1.1.4.1.4.0';
-//     # PowerNet-MIB::rPDULoadDevNumBanks.0
-//     my $num_banks_oid = '.1.3.6.1.4.1.318.1.1.12.2.1.4.0';
-//     # PowerNet-MIB::rPDUIdentDevicePowerWatts.0
-//     my $phase_power_oid = '.1.3.6.1.4.1.318.1.1.12.1.16.0';
-//     # PowerNet-MIB::rPDULoadStatusLoad.1
-//     my $phase_current_oid = '.1.3.6.1.4.1.318.1.1.12.2.3.1.1.2.1';
-//     # PowerNet-MIB::rPDULoadStatusLoad.2
-//     my $bank1_oid = '.1.3.6.1.4.1.318.1.1.12.2.3.1.1.2.2';
-//     # PowerNet-MIB::rPDULoadStatusLoad.3
-//     my $bank2_oid = '.1.3.6.1.4.1.318.1.1.12.2.3.1.1.2.3';
-//     # PowerNet-MIB::rPDULoadPhaseConfigOverloadThreshold.phase1
-//     my $phase_overload_oid = '.1.3.6.1.4.1.318.1.1.12.2.2.1.1.4.1';
-//     # PowerNet-MIB::rPDULoadPhaseConfigNearOverloadThreshold.phase1
-//     my $phase_nearoverload_oid = '.1.3.6.1.4.1.318.1.1.12.2.2.1.1.3.1';
+// # PowerNet-MIB::sPDUIdentModelNumber.0
+// my $pdu_model_oid = '.1.3.6.1.4.1.318.1.1.4.1.4.0';
+// # PowerNet-MIB::rPDULoadDevNumBanks.0
+// my $num_banks_oid = '.1.3.6.1.4.1.318.1.1.12.2.1.4.0';
+// # PowerNet-MIB::rPDUIdentDevicePowerWatts.0
+// my $phase_power_oid = '.1.3.6.1.4.1.318.1.1.12.1.16.0';
+// # PowerNet-MIB::rPDULoadStatusLoad.1
+// my $phase_current_oid = '.1.3.6.1.4.1.318.1.1.12.2.3.1.1.2.1';
+// # PowerNet-MIB::rPDULoadStatusLoad.2
+// my $bank1_oid = '.1.3.6.1.4.1.318.1.1.12.2.3.1.1.2.2';
+// # PowerNet-MIB::rPDULoadStatusLoad.3
+// my $bank2_oid = '.1.3.6.1.4.1.318.1.1.12.2.3.1.1.2.3';
+// # PowerNet-MIB::rPDULoadPhaseConfigOverloadThreshold.phase1
+// my $phase_overload_oid = '.1.3.6.1.4.1.318.1.1.12.2.2.1.1.4.1';
+// # PowerNet-MIB::rPDULoadPhaseConfigNearOverloadThreshold.phase1
+// my $phase_nearoverload_oid = '.1.3.6.1.4.1.318.1.1.12.2.2.1.1.3.1';
 
 const DEFAULT_PORT = 161;
 const DEFAULT_VERSION = snmp.Version1;
